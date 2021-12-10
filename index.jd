@@ -1,0 +1,17 @@
+// 5a
+function saveMatrixToFile(matrix, path) {
+        const fs = require('fs')
+
+        let stringified = JSON.stringify(matrix)
+        fs.writeFileSync(path, stringified)
+}
+
+// 5b
+function loadMatrixFromFile(path) {
+        return JSON.parse(require('fs').readFileSync(path))
+}
+
+module.exports = {
+        saveMatrixToFile,
+        loadMatrixFromFile,
+}
